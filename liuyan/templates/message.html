@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="/static/css/style.css">
+{#    <link rel="stylesheet" href="/static/css/style.css">#}
     <style>
         .smart-green {
             margin-left: auto;
@@ -139,15 +139,17 @@
     <div>
         <h2>
             <ul style="list-style-type:none">
-                <li>是谁留的言:</li>
-                <li>邮箱:</li>
-                <li>留言:</li>
-                <li>联系地址:</li>
+                {% for l in ly %}
+                <li>是谁留的言:{{ l.name }}</li>
+                <li>邮箱:{{ l.email }}</li>
+                <li>留言:{{ l.message }}</li>
+                <li>联系地址:{{ l.address }}</li>
                 <li>留言时间:</li>
+                {% endfor %}
             </ul>
         </h2>
     </div>
 </form>
-
+{{ messtime }}
 </body>
 </html>
